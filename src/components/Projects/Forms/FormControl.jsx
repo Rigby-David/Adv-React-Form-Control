@@ -21,12 +21,17 @@ export function InputControl({ label, ...rest }) {
   );
 }
 
-export function TextAreaControl() {
+export function TextAreaControl({ label, ...rest }) {
   return (
-    <label>
-        Journal Entry
-      <textarea placeholder="how are you feeling today?"></textarea>
-    </label>
+    <FormControl label={label}>
+
+      <input {...rest}/>
+    </FormControl>
+    
+  // <label>
+  //     Journal Entry
+  //   <textarea placeholder="how are you feeling today?"></textarea>
+  // </label>
   );
 }
 
