@@ -12,7 +12,7 @@ export default function Projects() {
 
         <label>
           Password
-          <input name="Password" placeholder="Password" />
+          <input name="password" placeholder="Password" />
         </label>
 
         <label>
