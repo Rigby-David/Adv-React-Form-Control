@@ -2,7 +2,8 @@ import { render, screen } from '@testing-library/react';
 import { 
   TextAreaControl, 
   InputControl, 
-  SelectControl 
+  SelectControl, 
+  CheckboxControl
 } from './FormControl.jsx';
 
 
@@ -51,6 +52,16 @@ test('SelectControl', () => {
 });
 
 test('CheckboxControl', () => {
-  
+  render(
+    <CheckboxControl
+      legend="Hungry?"
+      label="Yes"
+      // name="accept"
+      // required
+    />
+  );
+
+  const legend = screen.getByText('Hungry?');
+  expect(legend).not.toBeNull();
 });
 

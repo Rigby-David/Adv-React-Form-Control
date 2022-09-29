@@ -37,6 +37,13 @@ export function SelectControl({ label, placeholder, children, ...rest }) {
   );
 }
 
-export function CheckboxControl() {
-    
+export function CheckboxControl({ legend, label, ...rest }) {
+  return (
+    <fieldset>
+      <legend>{legend}</legend>
+      <label>{label}
+        <input type="checkbox" {...rest}/>
+      </label>
+    </fieldset>
+  );
 }

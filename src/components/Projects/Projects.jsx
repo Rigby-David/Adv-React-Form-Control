@@ -44,10 +44,15 @@ export default function Projects() {
           <textarea placeholder="how are you feeling today?"></textarea>
         </label>
 
-        <label>
+        <fieldset>
           <legend>Hungry?</legend>
-          <input type="checkbox"></input>
-        </label>
+          <label>
+          Yes
+            <input type="checkbox"></input>
+          </label>
+        </fieldset>
+
+
 
         <label>
           All done?
@@ -55,6 +60,8 @@ export default function Projects() {
         </label>
       </form>
       
+      {/* <CheckboxControl legend="Do you accept?" label="Yes" /> */}
+
     </div>
 
   );
