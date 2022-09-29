@@ -13,11 +13,6 @@ export function InputControl({ label, ...rest }) {
     <FormControl label={label}>
       <input {...rest}/>
     </FormControl>
-    // <label>
-  /* Password
-      <input name="password" placeholder="Password"></input> */
-    //   {label}
-    // </label>
   );
 }
 
@@ -25,13 +20,23 @@ export function TextAreaControl({ label, ...rest }) {
   return (
     <FormControl label={label}>
 
-      <input {...rest}/>
+      <textarea {...rest}/>
     </FormControl>
-    
-  // <label>
-  //     Journal Entry
-  //   <textarea placeholder="how are you feeling today?"></textarea>
-  // </label>
   );
 }
 
+export function SelectControl({ label, placeholder, children, ...rest }) {
+  return (
+    <FormControl label={label}>
+      <select {...rest}>
+        {placeholder && <option disabled>{placeholder}</option>}
+        {children}
+      </select>
+
+    </FormControl>
+  );
+}
+
+export function CheckboxControl() {
+    
+}

@@ -1,5 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import { TextAreaControl, InputControl } from './FormControl.jsx';
+import { 
+  TextAreaControl, 
+  InputControl, 
+  SelectControl 
+} from './FormControl.jsx';
 
 
 test('Input Control', () => {
@@ -20,9 +24,33 @@ test('TextAreaControl', () => {
     <TextAreaControl
       label="Journal Entry"
       placeholder="how are you feeling today?"
+
     />
   );
 
   const textControl = screen.getByPlaceholderText('how are you feeling today?');
   expect(textControl.placeholder).toBe('how are you feeling today?');
 });
+
+test('SelectControl', () => {
+  render(
+    <SelectControl
+      label="Select" name="options">
+      <option disabled selected value="">Make your choice</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>stuff</option>
+    </SelectControl>
+  );
+
+  const selectControl = screen.getByLabelText('Select');
+  expect(selectControl.name).toBe('options');
+  expect(selectControl.options.length).toBe(5);
+
+});
+
+test('CheckboxControl', () => {
+  
+});
+

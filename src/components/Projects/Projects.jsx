@@ -45,8 +45,8 @@ export default function Projects() {
         </label>
 
         <label>
-          Hungry?
-          <input name="checkbox" type="checkbox"></input>
+          <legend>Hungry?</legend>
+          <input type="checkbox"></input>
         </label>
 
         <label>
