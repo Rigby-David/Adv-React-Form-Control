@@ -47,3 +47,11 @@ export function CheckboxControl({ legend, label, ...rest }) {
     </fieldset>
   );
 }
+
+export function FormButton({ text }) {
+  return (
+    <button>
+      {text}
+    </button>
+  );
+}

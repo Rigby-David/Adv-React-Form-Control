@@ -1,20 +1,25 @@
+import { 
+  CheckboxControl,
+  InputControl,
+  SelectControl,
+  TextAreaControl 
+} from './Forms/FormControl';
 import styles from './Projects.css';
 
 export default function Projects() {
   return (
     <div className={styles.Projects}>
       <form>
-
-        <label>
-          Email
-          <input name="email" placeholder="Email" />
-        </label>
-
-        <label>
-          Password
-          <input name="password" placeholder="Password" />
-        </label>
-
+        <InputControl
+          label="Email"
+          name="email"
+          placeholder="Email"
+        />
+        <InputControl
+          label="Password"
+          name="password"
+          placeholder="Password"
+        />
         <label>
           <br/>
           Favorite food
@@ -25,34 +30,27 @@ export default function Projects() {
           <label>Ice Cream</label><br/>
           <input name="food" type="radio" />
           <label>Popcorn</label><br/>
-          
         </label>
 
-        <label>
-          Select
-          <select>
-            <option disabled selected value="">Make your choice</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">stuff</option>
-          </select>
-        </label>
+        <SelectControl
+          label="Select"
+          placeholder="Make your choice"
+        >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">stuff</option>
+        </SelectControl>
 
-        <label>
-          Journal Entry
-          <textarea placeholder="how are you feeling today?"></textarea>
-        </label>
+        <TextAreaControl
+          label="Journal Entry"
+          placeholder="how are you feeling today?"
+        />
 
-        <fieldset>
-          <legend>Hungry?</legend>
-          <label>
-          Yes
-            <input type="checkbox"></input>
-          </label>
-        </fieldset>
-
-
+        <CheckboxControl
+          legend="Hungry?"
+          label="Yes"
+        />
 
         <label>
           All done?
