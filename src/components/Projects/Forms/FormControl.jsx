@@ -1,7 +1,11 @@
 /* eslint-disable react/prop-types */
+import styles from './FormControl.css';
+import classnames from 'classnames';
+
 function FormControl({ label, children }) {
+  const className = classnames(styles.FormControl, styles.LabelText);
   return (
-    <label>
+    <label className={className}>
       {label}
       {children}
     </label>
@@ -39,8 +43,8 @@ export function SelectControl({ label, placeholder, children, ...rest }) {
 
 export function CheckboxControl({ legend, label, ...rest }) {
   return (
-    <fieldset>
-      <legend>{legend}</legend>
+    <fieldset className={styles.CheckboxControl}>
+      <legend className={styles.LabelText}>{legend}</legend>
       <label>{label}
         <input type="checkbox" {...rest}/>
       </label>
@@ -50,7 +54,7 @@ export function CheckboxControl({ legend, label, ...rest }) {
 
 export function FormButton({ text }) {
   return (
-    <button>
+    <button className={styles.FormButton}>
       {text}
     </button>
   );

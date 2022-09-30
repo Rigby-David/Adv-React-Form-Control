@@ -1,5 +1,6 @@
 import { 
   CheckboxControl,
+  FormButton,
   InputControl,
   SelectControl,
   TextAreaControl 
@@ -20,17 +21,6 @@ export default function Projects() {
           name="password"
           placeholder="Password"
         />
-        <label>
-          <br/>
-          Favorite food
-          <br/>
-          <input name="food" type="radio" />
-          <label>Pizza</label><br/>
-          <input name="food" type="radio" />
-          <label>Ice Cream</label><br/>
-          <input name="food" type="radio" />
-          <label>Popcorn</label><br/>
-        </label>
 
         <SelectControl
           label="Select"
@@ -52,10 +42,7 @@ export default function Projects() {
           label="Yes"
         />
 
-        <label>
-          All done?
-          <button>Submit</button>
-        </label>
+        <FormButton text="Submit"/>
       </form>
       
       {/* <CheckboxControl legend="Do you accept?" label="Yes" /> */}
