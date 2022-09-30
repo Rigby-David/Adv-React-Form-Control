@@ -68,7 +68,7 @@ test('CheckboxControl', () => {
 
 test('FormButton', () => {
   render(
-    <FormButton text="Submit"/>
+    <FormButton>Submit</FormButton>
   );
   
   const button1 = screen.getByRole('button');

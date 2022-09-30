@@ -7,6 +7,7 @@ import {
 } from './Forms/FormControl';
 import styles from './Projects.css';
 
+
 export default function Projects() {
   return (
     <div className={styles.Projects}>
@@ -15,6 +16,7 @@ export default function Projects() {
           label="Email"
           name="email"
           placeholder="Email"
+          required
         />
         <InputControl
           label="Password"
@@ -42,7 +44,7 @@ export default function Projects() {
           label="Yes"
         />
 
-        <FormButton text="Submit"/>
+        <FormButton>Submit</FormButton>
       </form>
       
       {/* <CheckboxControl legend="Do you accept?" label="Yes" /> */}
