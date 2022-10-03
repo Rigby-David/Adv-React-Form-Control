@@ -1,3 +1,4 @@
+import { data } from 'autoprefixer';
 import { 
   CheckboxControl,
   FormButton,
@@ -17,6 +18,8 @@ export default function Projects() {
           name="email"
           placeholder="Email"
           required
+          value={data.email || ''}
+          onChange={handleChange}
         />
         <InputControl
           label="Password"
@@ -27,6 +30,10 @@ export default function Projects() {
         <SelectControl
           label="Select"
           placeholder="Make your choice"
+          name="role"
+          required
+          value={data.role || ''}
+          onChange={handleChange}
         >
           <option value="1">1</option>
           <option value="2">2</option>
@@ -37,11 +44,18 @@ export default function Projects() {
         <TextAreaControl
           label="Journal Entry"
           placeholder="how are you feeling today?"
+          name="journal"
+          required
+          value={data.journal || ''}
+          onChange={handleChange}
         />
 
         <CheckboxControl
           legend="Hungry?"
           label="Yes"
+          name="yes"
+          value={data.yes || false}
+          onChange={handleChange}
         />
 
         <FormButton>Submit</FormButton>
