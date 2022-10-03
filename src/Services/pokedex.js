@@ -1,17 +1,13 @@
-import { fetchOrReject } from './utils';
+export const search = async (searchObj) => {
+  const query = Array.from(Object.entries(searchObj))
+    .map(([k, v]) => `${k}=${encodeURIComponent(v)}`)
+    .join('&');
+  const res = await fetch(process.env.POKEDEX_URL + '?' + query);
 
-export const typesGetAll = async () => {
-  const res = await fetchOrReject(process.env.POKEDEX_URL + '/types');
-  return res.json();
-};
-
-export const pokemonGetAll = async (page, formData) => {
-  const query =
-    Array.from(formData.entries())
-      .map(([k, v]) => `${k}=${v}`)
-      .join('&') +
-    '&page=' +
-    page;
-  const res = await fetchOrReject(`${process.env.POKEDEX_URL}?${query}`);
-  return res.json();
+  if (res.status >= 400) {
+    throw res;
+  } else {
+    const body = await res.json();
+    return body;
+  }
 };
