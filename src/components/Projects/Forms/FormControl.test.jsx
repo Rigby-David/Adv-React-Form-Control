@@ -8,7 +8,6 @@ import {
   LabelText
 } from './FormControl.jsx';
 
-
 test('Input Control', () => {
   render(
     <InputControl 
