@@ -96,21 +96,41 @@ test('Control changes update data', async () => {
     journal: 'user pitch',
     yes: true,
   });
+});
 
-  test('Form updates data when initialData changes', async () => {
-    const user = userEvent.setup();
+test('Form updates data when initialData changes', async () => {
+  const user = userEvent.setup();
 
-    const handleSubmit = jest.fn();
+  const handleSubmit = jest.fn();
 
-    const { rerender } = render(
-        <Test
-          onSubmit={handleSubmit}
-          formData={{
-            email: 'username',
-            role: '2',
-            journal: 'user pitch',
-            yes: true,
-          }}
-        />
-  });
+  const { rerender } = render(
+    <Test
+      onSubmit={handleSubmit}
+      formData={{
+        email: 'username',
+        role: '2',
+        journal: 'user pitch',
+        yes: true,
+      }}
+    />
+  );
+
+  // input text
+  const input = screen.getByLabelText('Email');
+  await user.clear(input);
+  await user.type(input, 'abc');
+
+  const changedData = {
+    email: 'updated username',
+    role: '4',
+    journal: 'updated pitch',
+    yes: false,
+  };
+
+  rerender(<Test onSubmit={handleSubmit} formData={changedData} />);
+
+  // click button
+  await user.click(screen.getByRole('button'));
+
+  expect(handleSubmit).toHaveBeenCalledWith(changedData);
 });

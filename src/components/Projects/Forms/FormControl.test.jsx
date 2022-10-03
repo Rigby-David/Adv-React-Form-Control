@@ -13,12 +13,15 @@ test('Input Control', () => {
     <InputControl 
       label="Password"
       name="password"
+      required
       placeholder="Password"
     />
   );
 
   const inputControl = screen.getByLabelText('Password');
   expect(inputControl.placeholder).toBe('Password');
+  expect(inputControl.name).toBe('password');
+  expect(inputControl.required).toBe(true);
 });
 
 test('TextAreaControl', () => {
