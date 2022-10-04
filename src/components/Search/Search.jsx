@@ -1,6 +1,7 @@
 import useSearchResults from '../Hooks/use-search-results';
 import { FormButton } from '../Projects/Forms/FormControl';
 import SearchForm from './SearchForm.jsx';
+import SearchResults from './SearchResults.jsx';
 
 export default function Search() {
   const {
@@ -17,6 +18,10 @@ export default function Search() {
         pokemon={pokemon}
         setPokemon={setPokemon}
         onsubmit={searchPokedex}
+      />
+      <SearchResults 
+        results={searchResults}
+        infiniteScrollRef={infiniteScrollRef}
       />
       <FormButton/>
     </section>
