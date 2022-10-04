@@ -17,13 +17,13 @@ export default function Search() {
       <SearchForm
         pokemon={pokemon}
         setPokemon={setPokemon}
-        onsubmit={searchPokedex}
+        onSubmit={searchPokedex}
       />
       <SearchResults 
         results={searchResults}
         infiniteScrollRef={infiniteScrollRef}
       />
-      <FormButton/>
+      <FormButton onClick={nextPage}>More Pokemon!</FormButton>
     </section>
   );
 }
