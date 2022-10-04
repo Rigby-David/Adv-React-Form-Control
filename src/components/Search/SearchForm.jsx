@@ -14,12 +14,15 @@ export default function SearchForm({ onsubmit }) {
   };
 
   return (
-    <InputControl
-      label="Search by Poke'mon name"
-      type="text"
-      name="pokemon"
-      value={pokemon}
-      onChange={(e) => setPokemon(e.target.value)}
-    />
+    <form onSubmit={formSubmit}>
+
+      <InputControl
+        label="Search by Poke'mon name"
+        type="text"
+        name="pokemon"
+        value={pokemon}
+        onChange={(e) => setPokemon(e.target.value)}
+      />
+    </form>
   );
 }
