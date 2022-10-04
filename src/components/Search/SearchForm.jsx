@@ -2,10 +2,10 @@ import useSearchForm from '../Hooks/use-search-form';
 import {
   InputControl
 } from '../Projects/Forms/FormControl.jsx';
-
-export default function SearchForm({ onsubmit }) {
-  const { pokemon, setPokemon, type_1, setType_1 } = useSearchForm();
-
+//catches onSubmit
+export default function SearchForm() {
+  const { pokemon, setPokemon } = useSearchForm();
+  // , type_1, setType_1
   const formSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
