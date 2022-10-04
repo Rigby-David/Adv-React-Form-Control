@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
-import styles from './About.css';
 
-export default function About() {
+export default function Search() {
   return (
-    <div className={styles.About}>
-      <h1>About</h1>
+    <div>
+      <h1>Search</h1>
       <nav>
         <Link to=""></Link>
       </nav>

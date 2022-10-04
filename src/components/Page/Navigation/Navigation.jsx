@@ -9,6 +9,7 @@ export default function Navigation() {
       <NavLink to="about">About</NavLink>
       <NavLink to="projects">Projects</NavLink>
       <NavLink to="contact">Contact</NavLink>
+      <NavLink to="search">Search</NavLink>
     </nav>
   );
 }
