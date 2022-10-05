@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import SearchResultCard from './SearchResultCard';
+import styles from './Search.css';
 
 export default function SearchResults({ results, infiniteScrollRef }) {
   return (
-    <ul>
+    <ul className={styles.SearchResults} >
       {results.map((result, i) => {
         const ref = i == results.length - 3 ? infiniteScrollRef : undefined;
         return (

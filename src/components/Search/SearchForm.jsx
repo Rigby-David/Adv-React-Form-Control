@@ -5,6 +5,8 @@ import {
   InputControl, SelectControl
 } from '../Projects/Forms/FormControl.jsx';
 
+import styles from './Search.css';
+
 export default function SearchForm({ onSubmit }) {
 
   const { pokemon, setPokemon, type_1, setType_1 } = useSearchForm();
@@ -16,7 +18,7 @@ export default function SearchForm({ onSubmit }) {
   };
 
   return (
-    <form onSubmit={formSubmit}>
+    <form className={styles.SearchForm} onSubmit={formSubmit}>
 
       <InputControl
         label="Search by Poke'mon name"

@@ -2,6 +2,7 @@ import useSearchResults from '../Hooks/use-search-results';
 import { FormButton } from '../Projects/Forms/FormControl';
 import SearchForm from './SearchForm.jsx';
 import SearchResults from './SearchResults.jsx';
+import styles from './Search.css';
 
 export default function Search() {
   const {
@@ -13,7 +14,7 @@ export default function Search() {
     searchPokedex,
   } = useSearchResults();
   return (
-    <section>
+    <section className={styles.Search}>
       <SearchForm
         pokemon={pokemon}
         setPokemon={setPokemon}
