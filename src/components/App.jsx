@@ -11,6 +11,7 @@ import Resume from './Contact/Resume.jsx';
 // import Header from './Page/Header/Header.jsx';
 import Layout from './Page/Layout.jsx';
 import Projects from './Projects/Projects.jsx';
+import Search from './Search/Search.jsx';
 
 export default function App() {
   return (
@@ -19,7 +20,8 @@ export default function App() {
         <Route element={<Layout />} >
           <Route index path="/"/>
           <Route path="about" element={<About/>}/>
-          <Route path="projects" element={<Projects/>}/>  
+          <Route path="projects" element={<Projects/>}/>
+          <Route path="search" element={<Search/>}/> 
           <Route path="contact" element={<Contact/>}>
             <Route index element={<Email/>}/>
             <Route path="linkedin" element={<Linkedin/>}/>
